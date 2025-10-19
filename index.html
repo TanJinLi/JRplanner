@@ -2,16 +2,50 @@
 <html>
 <head>
     <title>Japan Trip Itinerary</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
+    <div class="sakura-container">
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+        <div class="sakura"></div>
+    </div>
     <div class="container">
         <div class="header">
-            <h1>🇯🇵 Japan Trip Itinerary :D</h1>
+            <h1>🇯🇵 Japan Trip Itinerary </h1>
             <p>November 15-23, 2025 | Tokyo • Mt. Fuji • Kawaguchiko</p>
+            <p id="japan-time" class="japan-clock" style="margin-bottom: 12px;">🕐 Loading Japan time...</p>
         </div>
         
         <div class="content">
+            <div class="trip-progress">
+                <h3>Trip Progress</h3>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">Planning your adventure...</div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-dot" data-day="1">Day 1</div>
+                    <div class="timeline-dot" data-day="2">Day 2</div>
+                    <div class="timeline-dot" data-day="3">Day 3</div>
+                    <div class="timeline-dot" data-day="4">Day 4</div>
+                    <div class="timeline-dot" data-day="5">Day 5</div>
+                    <div class="timeline-dot" data-day="6">Day 6</div>
+                    <div class="timeline-dot" data-day="7">Day 7</div>
+                    <div class="timeline-dot" data-day="8">Day 8</div>
+                    <div class="timeline-dot" data-day="9">Day 9</div>
+                </div>
+            </div>
+
             <div class="stats">
                 <div class="stat-box">
                     <h3>9 Days</h3>
@@ -30,7 +64,12 @@
                     <p>Hotels</p>
                 </div>
             </div>
-            
+
+            <div class="map-section">
+                <h2>📍 Trip Overview Map</h2>
+                <div id="map"></div>
+            </div>
+
             <div class="filter-box">
                 <input type="text" id="searchInput" placeholder="🔍 Search by activity or location..." onkeyup="filterDays()">
             </div>
